@@ -7,23 +7,43 @@ app = FastAPI()
 async def root():
     return """
     <html>
-        <head>
-            <title>Impero Protocol | Data Gold Mine</title>
-            <style>
-                body { background-color: #000; color: #ffd700; font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-                .container { border: 2px solid #ffd700; display: inline-block; padding: 20px; border-radius: 10px; }
-                h1 { letter-spacing: 5px; }
-                button { background-color: #ffd700; color: #000; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>IMPERO PROTOCOL</h1>
-                <p>Status: ONLINE | System: DATA GOLD MINE</p>
-                <hr>
-                <p>Welcome, Commander Khaled Magdy.</p>
-                <button onclick="alert('Payment System Ready')">Access Protocol</button>
-            </div>
-        </body>
+    <head>
+        <title>DATA GOLD MINE</title>
+        <style>
+            body {
+                background-color: #000;
+                color: #ffd700;
+                font-family: Arial;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .box {
+                border: 2px solid #ffd700;
+                padding: 20px;
+                display: inline-block;
+                border-radius: 10px;
+            }
+            a {
+                background: #ffd700;
+                color: #000;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>🔥 DATA GOLD MINE</h1>
+            <p>System: ACTIVE</p>
+            <p>Auto Data Selling Engine</p>
+            <br>
+            <a href="/buy">BUY NOW ($10)</a>
+        </div>
+    </body>
     </html>
     """
+
+@app.get("/buy")
+async def buy():
+    return {"message": "Payment system will go here"}
